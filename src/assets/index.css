@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* @font-face {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    src: local('IBM Plex Sans'), local('IBMPlexSans'), url('../fonts/IBM_Plex_Sans/IBMPlexSans-Italic.ttf') format('ttf');
+  } */
+  @font-face {
+      font-family: 'circular-std';
+      src: url(./fonts/circular-std.ttf), local('Circular-Std') format('truetype');
+    }
+}
