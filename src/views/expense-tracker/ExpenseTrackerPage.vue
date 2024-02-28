@@ -1,9 +1,9 @@
 <template>
-  <div class="min-h-screen bg-tertiary p-6 lg:px-10 lg:py-16">
+  <div class="min-h-screen bg-tertiary  md:p-6 lg:px-10 lg:py-16">
     <div
-      class="grid grid-cols-1 md:grid-cols-5 bg-[#FCFBFC] gap-x-6 px-16 py-8 rounded-[40px]"
+      class="grid grid-cols-1 md:grid-cols-5 bg-[#FCFBFC] gap-x-6 px-6 md:px-10 lg:px-16 py-8 md:rounded-[40px]"
     >
-      <div class="col-span-2 mr-12">
+      <div class="col-span-2 md:mr-12 my-6 md:my-0">
         <header class="">
           <img
             src="../../assets/images/FundAllLogo.svg"
@@ -99,7 +99,6 @@
             >
               <span class="text-secondary">Welcome Back,</span> {{ userDetails.firstname }}
             </h1>
-            <!-- <p class=" font-thin text-center mb-16 lg:mb-20 font-circular text-[32px] lg:text-[40px] leading-[51px] tracking-normal">Mini Project Frontend</p> -->
             <p
               class="font-thin text-left font-nunito text-[15px] leading-[26.56px] tracking-normal"
             >
@@ -108,12 +107,12 @@
 
           </div>
           <div class="relative">
-            <div class="absolute -bottom-7 right-3">
+            <div class="hidden md:block absolute -bottom-7 right-3 lg:scale-100 md:scale-80 scale-60">
               <WelcomeIllustrationComponent />
             </div>
           </div>
         </div>
-        <div class="w-2/3 p-3 space-y-3 px-10">
+        <div class="w-2/3 p-3 space-y-3 px-4 lg:px-10">
           <h1 class="font-thin text-left font-nunito text-[15px] leading-[26.56px] tracking-normal">Target Monthly Expenses</h1>
           <TextInput inputId="targetMontlyExpenses" placeholder="Enter Amount" v-model="formData.targetMontlyExpenses" />
           <h1 class="font-thin text-left font-nunito text-[15px] leading-[26.56px] tracking-normal">Date</h1>
@@ -122,21 +121,21 @@
               <!-- <VDatePicker  /> -->
               <DatePicker @update:selectedDate="handleSelectedDate" />
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-x-6 px-10">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-x-6 lg:px-10">
               <div class="col-span-3 space-y-4">
                 <h1 class="font-thin text-left font-nunito text-[15px] leading-[26.56px] tracking-normal">Today's Expenses</h1>
                 <TextInput inputId="enterItem1" placeholder="Enter Item" v-model="formData.enterItem1" />
                 <TextInput inputId="enterItem2" placeholder="Enter Item" v-model="formData.enterItem2" />
                 <TextInput inputId="enterItem3" placeholder="Enter Item" v-model="formData.enterItem3" />
               </div>
-              <div class="col-span-2 mt-9 space-y-4">
+              <div class="md:col-span-2 col-span-3 mt-9 space-y-4">
                 <TextInput inputId="enterAmount1" placeholder="Enter Amount" v-model="formData.enterAmount1" />
                 <TextInput inputId="enterAmount2" placeholder="Enter Amount" v-model="formData.enterAmount2" />
                 <TextInput inputId="enterAmount3" placeholder="Enter Amount" v-model="formData.enterAmount3" />
               </div>
 
             </div>
-            <div class="flex justify-end items-center px-10">
+            <div class="flex flex-col md:flex-row justify-end items-center md:px-10">
               <p class="font-thin text-left font-circular text-[16px] leading-[26.24px] mt-2 mr-2 tracking-normal">Total Actual Expenses: ₦ 
               </p>
                 <TextInput inputType="number" inputId="enterAmount3" placeholder="0.00" v-model="totalAmount" />

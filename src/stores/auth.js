@@ -53,8 +53,9 @@ export const useAuthStore = defineStore('auth',
                       const type = response.data.success.user.token_type;
                       localStorage.setItem('token', accessToken)
                       localStorage.setItem('tokenType', type)
+                      localStorage.getItem("token")
                       // Setting token for axios header
-                      axios.defaults.headers.common["Authorization"] = localStorage.getItem("token");
+                      axios.defaults.headers.common["Authorization"] = `${type} ${accessToken}`;
                       
                       console.log('store response =>',accessToken);
       
